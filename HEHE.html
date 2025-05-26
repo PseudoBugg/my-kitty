@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        .box-container {
+            text-align: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ff6f91;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 28px;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="box" id="box" onclick="showMessage()">🎁 Open Me</div>
+        <div class="message" id="message">I Love You So Much My Kitty ❤️</div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const box = document.getElementById('box');
+            const message = document.getElementById('message');
+            box.style.display = 'none';
+            message.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
